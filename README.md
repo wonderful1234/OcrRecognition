@@ -1,0 +1,2 @@
+# OcrRecognition
+OCR by C++
