@@ -1,11 +1,13 @@
 #include "OcrRecognition.h"
 #include "OcrManage.h"
+#include "ui_OcrRecognition.h"
 OcrRecognition::OcrRecognition(QWidget *parent)
-    : QWidget(parent)
+    : PopWidgetBase(parent), ui(new Ui::OcrRecognition)
 {
-    ui.setupUi(this);
-    OcrManage::getInstance()->getTexts("C:\\Users\\wangfude\\Pictures\\0880c08b0110e0868615.png");
+    ui->setupUi(this);
 }
 
 OcrRecognition::~OcrRecognition()
-{}
+{
+    delete ui;
+}

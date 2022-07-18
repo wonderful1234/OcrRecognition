@@ -13,8 +13,8 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{85EF78EF-D7D8-43BD-A399-2FBE214692D4}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
-    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">10.0.20348.0</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">10.0.20348.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">8.1</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -114,9 +114,11 @@ xcopy /D /Y /C /E "$(SolutionDir)$(ProjectName)\models" "$(TargetDir)models\"</C
     <QtRcc Include="OcrRecognition.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\framelesshelper.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\OcrManage.cpp" />
     <ClCompile Include="src\OcrRecognition.cpp" />
+    <ClCompile Include="src\PopWidgetBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\OcrRecognition.h" />
@@ -125,6 +127,8 @@ xcopy /D /Y /C /E "$(SolutionDir)$(ProjectName)\models" "$(TargetDir)models\"</C
     <QtUic Include="src\OcrRecognition.ui" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="src\PopWidgetBase.h" />
+    <QtMoc Include="src\framelesshelper.h" />
     <ClInclude Include="src\OcrManage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

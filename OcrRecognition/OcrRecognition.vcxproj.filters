@@ -37,9 +37,21 @@
     <ClCompile Include="src\OcrManage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\framelesshelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PopWidgetBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\OcrRecognition.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\framelesshelper.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\PopWidgetBase.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

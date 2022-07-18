@@ -1,10 +1,8 @@
-<UI version="4.0" >
- <class>OcrRecognitionClass</class>
- <widget class="QWidget" name="OcrRecognitionClass" >
-  <property name="objectName" >
-   <string notr="true">OcrRecognitionClass</string>
-  </property>
-  <property name="geometry" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OcrRecognition</class>
+ <widget class="QWidget" name="OcrRecognition">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -12,14 +10,13 @@
     <height>400</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>OcrRecognition</string>
-  </property>$centralwidget$
+  </property>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources>
-   <include location="OcrRecognition.qrc"/>
+  <include location="../OcrRecognition.qrc"/>
  </resources>
  <connections/>
-</UI>
+</ui>

@@ -1,9 +1,8 @@
 #pragma once
 
-#include <QtWidgets/QWidget>
-#include "ui_OcrRecognition.h"
-
-class OcrRecognition : public QWidget
+#include "PopWidgetBase.h"
+namespace Ui { class OcrRecognition; }
+class OcrRecognition : public PopWidgetBase
 {
     Q_OBJECT
 
@@ -12,5 +11,5 @@ public:
     ~OcrRecognition();
 
 private:
-    Ui::OcrRecognitionClass ui;
+    Ui::OcrRecognition* ui;
 };

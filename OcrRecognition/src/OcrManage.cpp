@@ -1,7 +1,5 @@
 #include "OcrManage.h"
 #include <QFileInfo>
-const char* DEFAULT_IMG_PATH = "images\\";
-const char* DEFAULT_IMG_NAME = "1.jpg";
 OcrManage* OcrManage::instance = nullptr;
 OcrManage::OcrManage()
 {
@@ -46,6 +44,11 @@ QString OcrManage::getTexts(const QString& imagePath)
 	}
 	return text;
 	
+}
+void OcrManage::destoryOcr()
+{
+	if(handle)
+		OcrDestroy(handle);
 }
 OcrManage::~OcrManage()
 {

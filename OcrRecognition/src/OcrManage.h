@@ -11,6 +11,7 @@ class OcrManage
 public:
 	static OcrManage* getInstance();
 	QString getTexts(const QString& imagePath);
+	void destoryOcr();
 	~OcrManage();
 
 private:
