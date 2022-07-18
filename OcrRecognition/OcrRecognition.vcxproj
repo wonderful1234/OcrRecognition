@@ -81,7 +81,7 @@ xcopy /D /Y /C /E "$(SolutionDir)$(ProjectName)\models" "$(TargetDir)models\"</C
     </Link>
     <PostBuildEvent>
       <Command>xcopy /D /Y /C /E "$(SolutionDir)bin" "$(TargetDir)"
-xcopy /D /Y /C /E "$(SolutionDir)$(ProjectName)\models" "$(TargetDir)models"</Command>
+xcopy /D /Y /C /E "$(SolutionDir)$(ProjectName)\models" "$(TargetDir)models\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="Configuration">
