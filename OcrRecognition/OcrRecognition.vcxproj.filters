@@ -55,6 +55,9 @@
     <ClCompile Include="src\MyWinEventFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\imageviewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\OcrRecognition.h">
@@ -70,6 +73,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="src\MyGlobalShortCut.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\imageviewer.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

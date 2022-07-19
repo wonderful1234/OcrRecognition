@@ -1,4 +1,7 @@
 <RCC>
-    <qresource prefix="OcrRecognition">
+    <qresource prefix="/OcrRecognition">
+        <file>res/5.png</file>
+        <file>res/7.png</file>
+        <file>res/load.gif</file>
     </qresource>
 </RCC>
