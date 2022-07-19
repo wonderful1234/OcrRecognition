@@ -117,6 +117,8 @@ xcopy /D /Y /C /E "$(SolutionDir)$(ProjectName)\models" "$(TargetDir)models\"</C
     <ClCompile Include="src\framelesshelper.cpp" />
     <ClCompile Include="src\freesnapdialog.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MyGlobalShortCut.cpp" />
+    <ClCompile Include="src\MyWinEventFilter.cpp" />
     <ClCompile Include="src\OcrManage.cpp" />
     <ClCompile Include="src\OcrRecognition.cpp" />
     <ClCompile Include="src\PopWidgetBase.cpp" />
@@ -130,6 +132,8 @@ xcopy /D /Y /C /E "$(SolutionDir)$(ProjectName)\models" "$(TargetDir)models\"</C
     <QtUic Include="src\OcrRecognition.ui" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="src\MyGlobalShortCut.h" />
+    <ClInclude Include="src\MyWinEventFilter.h" />
     <ClInclude Include="src\screenshothelper.h" />
     <QtMoc Include="src\PopWidgetBase.h" />
     <QtMoc Include="src\framelesshelper.h" />

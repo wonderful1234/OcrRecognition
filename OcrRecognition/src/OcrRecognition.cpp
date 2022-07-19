@@ -9,12 +9,15 @@ OcrRecognition::OcrRecognition(QWidget *parent)
     : PopWidgetBase(parent), ui(new Ui::OcrRecognition)
 {
     ui->setupUi(this);
+	m_shortcut = new MyGlobalShortCut("", this, "");
+	connect(m_shortcut, SIGNAL(activatedHotKey(int)), this, SLOT(hotKeyPressed(int)));
 }
 
 OcrRecognition::~OcrRecognition()
 {
     delete ui;
 }
+
 
 void OcrRecognition::getDpi()
 {
@@ -38,4 +41,9 @@ void OcrRecognition::showScreenShot()
 		picture->save(fileName, "png");
 		OcrManage::getInstance()->getTexts(fileName);
 	}
+}
+
+void OcrRecognition::hotKeyPressed(int i)
+{
+	showScreenShot();
 }

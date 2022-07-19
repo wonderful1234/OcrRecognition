@@ -49,6 +49,12 @@
     <ClCompile Include="src\screenshothelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\MyGlobalShortCut.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MyWinEventFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\OcrRecognition.h">
@@ -61,6 +67,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="src\freesnapdialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\MyGlobalShortCut.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -77,6 +86,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\screenshothelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MyWinEventFilter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
