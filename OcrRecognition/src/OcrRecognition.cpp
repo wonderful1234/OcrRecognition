@@ -8,6 +8,7 @@
 #include "thread"
 #include <QFileDialog>
 #include <QSettings>
+#include <QClipboard>
 OcrRecognition::OcrRecognition(QWidget *parent)
     : PopWidgetBase(parent), ui(new Ui::OcrRecognition)
 {
@@ -21,7 +22,7 @@ OcrRecognition::OcrRecognition(QWidget *parent)
 	connect(m_shortcut, SIGNAL(activatedHotKey(int)), this, SLOT(hotKeyPressed(int)));
 
 	connect(this, &OcrRecognition::signGetResult, this, [&](const QString& result, const QString& fileName) {
-		this->show();
+		this->showNormal();
 		movie->stop();
 		ui->stackedWidget->setCurrentIndex(0);
 		ui->btnAdd->show();
@@ -78,6 +79,7 @@ void OcrRecognition::getDpi()
 
 void OcrRecognition::showScreenShot()
 {
+	getDpi();
 	QPixmap* picture = new QPixmap;
 	FreeSnapDialog freeSnapDialog(ScreenShotHelper::grabWindow(1, (HWND)QApplication::desktop()->winId(), m_dpi),
 		picture, this, m_dpi);
@@ -86,6 +88,7 @@ void OcrRecognition::showScreenShot()
 	{
 		QString fileName = QApplication::applicationDirPath() + "/ScreenShot.png";
 		picture->save(fileName, "png");
+		QApplication::clipboard()->setPixmap(QPixmap(fileName));
 		dealPicture(fileName);
 		
 	}
