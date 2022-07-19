@@ -15,6 +15,9 @@ OcrRecognition::OcrRecognition(QWidget *parent)
 
 OcrRecognition::~OcrRecognition()
 {
+	m_shortcut->unregisterHotKey();
+	m_shortcut->deleteLater();
+	m_shortcut = nullptr;
     delete ui;
 }
 
