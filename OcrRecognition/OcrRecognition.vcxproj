@@ -135,12 +135,19 @@ xcopy /D /Y /C /E "$(SolutionDir)$(ProjectName)\models" "$(TargetDir)models\"</C
   <ItemGroup>
     <QtMoc Include="src\MyGlobalShortCut.h" />
     <QtMoc Include="src\imageviewer.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="src\MyWinEventFilter.h" />
     <ClInclude Include="src\screenshothelper.h" />
     <QtMoc Include="src\PopWidgetBase.h" />
     <QtMoc Include="src\framelesshelper.h" />
     <QtMoc Include="src\freesnapdialog.h" />
     <ClInclude Include="src\OcrManage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OcrRecognition.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\OCR.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

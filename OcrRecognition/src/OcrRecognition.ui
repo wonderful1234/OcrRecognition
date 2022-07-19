@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>OcrRecognition</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../OcrRecognition.qrc">
+    <normaloff>:/OcrRecognition/res/OCR.ico</normaloff>:/OcrRecognition/res/OCR.ico</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">QWidget{font-family:&quot;微软雅黑&quot;;}</string>
   </property>

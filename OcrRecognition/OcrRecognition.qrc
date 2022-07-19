@@ -3,5 +3,6 @@
         <file>res/5.png</file>
         <file>res/7.png</file>
         <file>res/load.gif</file>
+        <file>res/OCR.ico</file>
     </qresource>
 </RCC>
