@@ -12,4 +12,7 @@ public:
 
 private:
     Ui::OcrRecognition* ui;
+    double m_dpi = 1;
+    void getDpi();
+    void showScreenShot();
 };

@@ -43,6 +43,12 @@
     <ClCompile Include="src\PopWidgetBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\freesnapdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\screenshothelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\OcrRecognition.h">
@@ -54,14 +60,23 @@
     <QtMoc Include="src\PopWidgetBase.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="src\freesnapdialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="src\OcrRecognition.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="src\freesnapdialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\OcrManage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\screenshothelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
