@@ -22,7 +22,6 @@ OcrRecognition::OcrRecognition(QWidget *parent)
 	connect(m_shortcut, SIGNAL(activatedHotKey(int)), this, SLOT(hotKeyPressed(int)));
 
 	connect(this, &OcrRecognition::signGetResult, this, [&](const QString& result, const QString& fileName) {
-		this->showNormal();
 		movie->stop();
 		ui->stackedWidget->setCurrentIndex(0);
 		ui->btnAdd->show();
@@ -86,6 +85,7 @@ void OcrRecognition::showScreenShot()
 	freeSnapDialog.exec();
 	if (picture)
 	{
+		this->showNormal();
 		QString fileName = QApplication::applicationDirPath() + "/ScreenShot.png";
 		picture->save(fileName, "png");
 		QApplication::clipboard()->setPixmap(QPixmap(fileName));
