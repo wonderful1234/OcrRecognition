@@ -13,8 +13,6 @@ public:
 	~ImageViewer();
 	void setPixmap(const QPixmap &pix );
 	static QRect getMainWindowRect();
-	void setLeftArrowEnable(bool);
-	void setRightArrowEnable(bool);
 	void showPic(const QString& s, bool hide = true);
 	void defaultEnlargePix();
 protected:
@@ -29,7 +27,6 @@ private slots:
 	void enlargePix();
 	void narrowPix();
 	void rotatePix();
-	void savePicture();
 signals:
 	void sigLastOne();
 	void sigNextOne();
@@ -38,8 +35,7 @@ private:
 	int labelX, labelY;
 	int xMouse, yMouse;
 	double labelWidth,labelHeight;
-	QToolButton /**btnClose,*/ *btnRotate, *btnEnlarge, *btnNarrow/*, *btnSaveAs*/;
-	QToolButton *btnBack, *btnNext/*,*btnInfo*/;
+	QToolButton  *btnRotate, *btnEnlarge, *btnNarrow;
 	QWidget* toolbox;
 	QWidget* backgroundWidget;
 	QLabel* lblImage;

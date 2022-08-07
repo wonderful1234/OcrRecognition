@@ -102,7 +102,7 @@ void OcrRecognition::dealPicture(const QString& fileName)
 	ui->stackedWidget->setCurrentIndex(1);
 	std::thread task = std::thread([=]() {
 
-		QString result = OcrManage::getInstance()->getTexts(fileName);
+		QString result = OcrManage::getInstance().getTexts(fileName);
 		emit signGetResult(result, fileName);
 		});
 	task.detach();

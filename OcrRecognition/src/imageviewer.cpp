@@ -23,26 +23,12 @@ ImageViewer::ImageViewer(QWidget *parent)
 	QHBoxLayout* mainLayout = new QHBoxLayout(this);
 	backgroundWidget = new QWidget(this);
 	lblImage = new QLabel(this);
-	//btnClose = new QToolButton(this);
 	btnEnlarge = new QToolButton(this);
 	btnNarrow = new QToolButton(this);
 	btnRotate = new QToolButton(this);
-	//btnSaveAs = new QToolButton(this);
-	btnBack = new QToolButton(this);
-	btnNext = new QToolButton(this);
-	//btnInfo = new QToolButton(this);
-
-//	btnClose->setFocusPolicy(Qt::NoFocus);
 	btnEnlarge->setFocusPolicy(Qt::NoFocus);
 	btnNarrow->setFocusPolicy(Qt::NoFocus);
 	btnRotate->setFocusPolicy(Qt::NoFocus);
-	//btnSaveAs->setFocusPolicy(Qt::NoFocus);
-	btnBack->setFocusPolicy(Qt::NoFocus);
-	btnNext->setFocusPolicy(Qt::NoFocus);
-	//btnInfo->setFocusPolicy(Qt::NoFocus);
-
-	btnBack->hide();
-	btnNext->hide();
 
 	mainLayout->setContentsMargins(0, 0, 0, 0);
 	backgroundWidget->setObjectName("backgroundWidget");
@@ -50,64 +36,30 @@ ImageViewer::ImageViewer(QWidget *parent)
 	mainLayout->addWidget(backgroundWidget);
 
 	setCursor(Qt::SizeAllCursor);
-//	btnClose->setCursor(Qt::PointingHandCursor);
 	btnEnlarge->setCursor(Qt::PointingHandCursor);
 	btnNarrow->setCursor(Qt::PointingHandCursor);
 	btnRotate->setCursor(Qt::PointingHandCursor);
-	//btnSaveAs->setCursor(Qt::PointingHandCursor);
-	btnBack->setCursor(Qt::PointingHandCursor);
-	btnNext->setCursor(Qt::PointingHandCursor);
-	//btnInfo->setCursor(Qt::PointingHandCursor);
 
-//	btnClose->setToolTip((u8"关闭"));
 	btnEnlarge->setToolTip((u8"放大"));
 	btnNarrow->setToolTip((u8"缩小"));
 	btnRotate->setToolTip((u8"旋转"));
-	//btnSaveAs->setToolTip((u8"另存为"));
-	btnBack->setToolTip((u8"上一张图片\n快捷键:LEFT"));
-	btnNext->setToolTip((u8"下一张图片\n快捷键:RIGHT"));
-	//btnInfo->setToolTip((u8"图片信息"));
-
 	btnEnlarge->setText((u8"放大"));
 	btnNarrow->setText((u8"缩小"));
 	btnRotate->setText((u8"旋转"));
-	//btnSaveAs->setText((u8"另存为"));
-	//btnInfo->setText((u8"图片信息"));
 
 	QString style = "QToolButton{border:0px;color:#b2bcc5;padding-top:25px;background-repeat:no-repeat;\
-					background-image:url(:/Puma/Resources/ImageViewer/%1.png);background-position:top center;}\
-					QToolButton:hover{background-image: url(:/Puma/Resources/ImageViewer/%1_hit.png);color:#ffffff;}";
-
-	QString closeStyle = "QToolButton{border:0px;border-image:url(:/Puma/Resources/ImageViewer/%1_nor.png)}\
-					QToolButton:hover{border-image: url(:/Puma/Resources/ImageViewer/%1_hit.png);}\
-					QToolButton:pressed{border-image: url(:/Puma/Resources/ImageViewer/%1_down.png);}";
-
-	QString style2 = "QToolButton{border:0px;border-image:url(:/Puma/Resources/ImageViewer/%1_nor.png)}\
-					QToolButton:hover{border-image: url(:/Puma/Resources/ImageViewer/%1_hit.png);}\
-					QToolButton:pressed{border-image: url(:/Puma/Resources/ImageViewer/%1_nor.png);}\
-					QToolButton:disabled{border-image: url(:/Puma/Resources/ImageViewer/%1_dis.png);}";
-	//btnClose->setStyleSheet(closeStyle.arg("close1"));
+					background-image:url(:/OcrRecognition/res/%1.png);background-position:top center;}\
+					QToolButton:hover{background-image: url(:/OcrRecognition/res/%1_hit.png);color:#ffffff;}";
 	btnEnlarge->setStyleSheet(style.arg("amplification"));
 	btnNarrow->setStyleSheet(style.arg("narrow"));
 	btnRotate->setStyleSheet(style.arg("rotating"));
-	//btnSaveAs->setStyleSheet(style.arg("downing"));
-	//btnInfo->setStyleSheet(style.arg("picinfo"));
-	btnBack->setStyleSheet(style2.arg("Behind"));
-	btnNext->setStyleSheet(style2.arg("front"));
 
 	btnEnlarge->setIconSize(QSize(27, 29));
 	btnNarrow->setIconSize(QSize(27, 29));
 	btnRotate->setIconSize(QSize(27, 29));
-	//btnSaveAs->setIconSize(QSize(27, 29));
-	//btnInfo->setIconSize(QSize(27, 29));
-//	btnClose->setFixedSize(20, 20);
 	btnRotate->setFixedSize(40, 50);
 	btnEnlarge->setFixedSize(40, 50);
 	btnNarrow->setFixedSize(40, 50);
-	//btnSaveAs->setFixedSize(40, 50);
-	//btnInfo->setFixedSize(50, 50);
-	btnBack->setFixedSize(39, 60);
-	btnNext->setFixedSize(39, 60);
 
 	toolbox = new QWidget(this);
 	QHBoxLayout* toolboxLayout = new QHBoxLayout();
@@ -119,22 +71,11 @@ ImageViewer::ImageViewer(QWidget *parent)
 	toolboxLayout->addWidget(btnEnlarge);
 	toolboxLayout->addWidget(btnNarrow);
 	toolboxLayout->addWidget(btnRotate);
-	//toolboxLayout->addWidget(btnSaveAs);
-	//toolboxLayout->addWidget(btnInfo);
 
-//	btnClose->setGeometry(this->width() - btnClose->width() - 40, 30, btnClose->width(), btnClose->height());
 	toolbox->setGeometry((this->width() - toolbox->width()) / 2, this->height() - toolbox->height() - 10, toolbox->width(), toolbox->height());
-	btnBack->setGeometry(40, (this->height() - btnBack->height()) / 2, 39, 60);
-	btnNext->setGeometry(this->width() - btnNext->width() - 40, (this->height() - btnNext->height()) / 2, 39, 60);
-
-//	connect(btnClose, &QToolButton::clicked, this, &QWidget::close);
 	connect(btnEnlarge, &QToolButton::clicked, this, &ImageViewer::enlargePix);
 	connect(btnNarrow, &QToolButton::clicked, this, &ImageViewer::narrowPix);
 	connect(btnRotate, &QToolButton::clicked, this, &ImageViewer::rotatePix);
-	//connect(btnSaveAs, &QToolButton::clicked, this, &ImageViewer::savePicture);
-	connect(btnBack, &QToolButton::clicked, this, &ImageViewer::sigLastOne);
-	connect(btnNext, &QToolButton::clicked, this, &ImageViewer::sigNextOne);
-	//connect(btnInfo, &QToolButton::clicked, this, &ImageViewer::showPicInfo);
 }
 
 ImageViewer::ImageViewer(QWidget *p, const QString& file, bool hide) :ImageViewer(p)
@@ -198,8 +139,7 @@ void ImageViewer::showPic(const QString& file, bool hide)
 	}
 	if (hide)
 	{
-		btnBack->hide();
-		btnNext->hide();
+		
 	}
 	setGeometry(getMainWindowRect());
 	resizeEvent(NULL);
@@ -271,15 +211,6 @@ void ImageViewer::setPixmap(const QPixmap &pix)
 	defaultEnlargePix();
 }
 
-void ImageViewer::setLeftArrowEnable(bool flag)
-{
-	btnBack->setEnabled(flag);
-}
-
-void ImageViewer::setRightArrowEnable(bool flag)
-{
-	btnNext->setEnabled(flag);
-}
 
 void ImageViewer::enlargePix()
 {
@@ -331,18 +262,6 @@ void ImageViewer::rotatePix()
 		calculateGif();
 	else
 		calculatePix();
-}
-
-void ImageViewer::savePicture()
-{
-	QString dir = QFileDialog::getSaveFileName(this, (u8"图片另存为"),
-		"/image", (u8"Images (*.png *.xpm *.jpg)"));
-	if (!m_filePath.isEmpty())
-	{
-		QFile::copy(m_filePath, dir);
-	}
-	else
-		pix.save(dir);
 }
 
 void ImageViewer::calculatePix()
@@ -430,10 +349,7 @@ void ImageViewer::resizeEvent(QResizeEvent* event)
 	}
 
 	lblImage->setGeometry(labelX, labelY, labelWidth, labelHeight);
-//	btnClose->setGeometry(this->width() - btnClose->width() - 40, 30, btnClose->width(), btnClose->height());
 	toolbox->setGeometry((this->width() - toolbox->width()) / 2, this->height() - toolbox->height() - 10, toolbox->width(), toolbox->height());
-	btnBack->setGeometry(40, (this->height() - btnBack->height()) / 2, 39, 60);
-	btnNext->setGeometry(this->width() - btnNext->width() - 40, (this->height() - btnNext->height()) / 2, 39, 60);
 	defaultEnlargePix();
 }
 
@@ -446,10 +362,10 @@ void ImageViewer::keyPressEvent(QKeyEvent* event)
 		this->close();
 		break;
 	case Qt::Key_Left:
-		btnBack->click();
+		
 		break;
 	case Qt::Key_Right:
-		btnNext->click();
+		
 		break;
 	default:
 		break;

@@ -1,16 +1,19 @@
 #include "OcrManage.h"
 #include <QFileInfo>
-OcrManage* OcrManage::instance = nullptr;
+#include <mutex>
+std::unique_ptr<OcrManage>OcrManage::m_instance;
 OcrManage::OcrManage()
 {
 	handle= OcrInit(DET_MODEL, CLS_MODEL, REC_MODEL, KEY_FILE, THREAD_NUM);
 }
 
-OcrManage* OcrManage::getInstance()
+OcrManage& OcrManage::getInstance()
 {
-	if (!instance)
-		instance = new OcrManage();
-	return instance;
+	static std::once_flag s_flag;
+	std::call_once(s_flag, [&]() {
+		m_instance.reset(new OcrManage);
+		});
+	return *m_instance;
 }
 QString OcrManage::getTexts(const QString& imagePath)
 {
@@ -50,7 +53,7 @@ void OcrManage::destoryOcr()
 	if(handle)
 		OcrDestroy(handle);
 }
+
 OcrManage::~OcrManage()
 {
-
 }

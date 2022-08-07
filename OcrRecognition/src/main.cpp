@@ -11,5 +11,5 @@ int main(int argc, char *argv[])
     OcrRecognition w;
     w.show();
     return a.exec();
-    OcrManage::getInstance()->destoryOcr();
+    OcrManage::getInstance().destoryOcr();
 }

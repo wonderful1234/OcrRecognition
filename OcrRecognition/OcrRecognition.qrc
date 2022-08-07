@@ -4,5 +4,11 @@
         <file>res/7.png</file>
         <file>res/load.gif</file>
         <file>res/OCR.ico</file>
+        <file>res/amplification.png</file>
+        <file>res/amplification_hit.png</file>
+        <file>res/narrow.png</file>
+        <file>res/narrow_hit.png</file>
+        <file>res/rotating.png</file>
+        <file>res/rotating_hit.png</file>
     </qresource>
 </RCC>
